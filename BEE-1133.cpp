@@ -1,24 +1,22 @@
 #include <iostream>
- 
+
 using namespace std;
  
 int main() {
- 
-    int X,Y,temp,i;
-    
+
+    int X,Y,sum,temp;
     cin>>X>>Y;
     if(X>Y){
-        temp = X;
+       temp = X;
         X = Y;
-        Y = temp;
+        Y = temp; 
     }
     
     
-    for(i=X+1; i<Y;i++){
-        if(i%5 == 2 || i%5 == 3){
-            cout<<i<<endl;
-        }
+    for(int i=X;i<Y;i++){
+        sum += i;
     }
+    cout<<sum<<endl;
  
     return 0;
 }

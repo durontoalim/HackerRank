@@ -1,20 +1,27 @@
-#include <iostream>
+#include <bits/stdc++.h>
  
 using namespace std;
  
 int main() {
- 
-    int N,i,j,k;
-    
-    while(cin>>N){
-        for(i=N;i<=N;i++){
-            cout<<"Caso "<<i+1<<": "<<i+1<<" numero"<<endl;
+    int n,casee=1;
+    while(cin>>n){
+        int sum=1;
+        casee++;
+        for(int i=0;i<=n;i++){
+            sum += i;
         }
-        for(j=0;j<i;j++){
-            for(k=0;k<N;k++){
-                cout<<k<<endl;
+        if(n==0){
+            cout<<"Caso "<<casee<<": "<<sum<<" numero"<<endl;
+        }else{
+            cout<<"Caso "<<casee<<": "<<sum<<" numeros"<<endl;
+        }
+        cout<<"0";
+        for(int i=1;i<=n;i++){
+            for(int j=1; j<=i; j++){
+                cout<<" "<<i;
             }
         }
+        cout<<"\n";
     }
  
     return 0;

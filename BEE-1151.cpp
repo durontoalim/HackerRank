@@ -4,21 +4,23 @@ using namespace std;
  
 int main() {
  
-    int N,i,first = 0,second = 1,fibo,fiboo,count = 0;
-    cin>>N;
-    while(count<N){
-        if(count<=1){
-            fibo = count;
-        }
-        else{
-            fibo = first+second;
-            first = second;
-            second = fibo;
-        }
+    int n,count =2;
+    
+    cin>>n;
+    int first = 1;
+    int second = 1;
+    int fibo = 1;
+    cout<<"0 1";
+    while(count !=n){
         cout<<" "<<fibo;
+        first = second;
+        second = fibo;
+        fibo = first + second;
+
         count++;
     }
     
+    cout<<endl;
  
     return 0;
 }

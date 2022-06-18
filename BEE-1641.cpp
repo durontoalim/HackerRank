@@ -4,20 +4,16 @@ using namespace std;
  
 int main() {
  
-    int R,W,L,i;
-    for(i=1;i<=4;i++){
-        cin>>R;
-        if(R==0){
-            break;
-        }
-        cin>>W>>L;
-        if(R<W && R<L){
-            cout<<"Pizza "<<i<<" fits on the table"<<endl;
+    int a,b,c,t=1;
+    while(cin>>a && a != 0){
+        cin>>b>>c;
+        if(b*b+c*c <=(a*2)*(a*2)){
+            cout<<"Pizza "<<t<<" fits on the table."<<endl;
         }else{
-            cout<<"Pizza "<<i<<" does not fits on the table"<<endl;
+            cout<<"Pizza "<<t<<" does not fit on the table."<<endl;
         }
+        t++;
     }
-    
  
     return 0;
 }

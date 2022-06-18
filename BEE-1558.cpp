@@ -1,23 +1,34 @@
-#include <iostream>
+#include <bits/stdc++.h>
  
 using namespace std;
- 
+
 int main() {
  
-    int N,sum,sum2,result;
+    int N,result,x,y;
     while(cin>>N){
-        for(int i=0;i<100;i++){
-        sum = i*i;
-        for(int j=0;j<N;j++){
-            sum2 = j*j;
-            result = sum+sum2;
+        y=0;
+        x = sqrt(N);
+        bool col = false;
+        while(x>=y){
+            result = pow(y,2) + pow(x,2);
             if(result == N){
-                cout<<"YES"<<endl;
-            }else{
-                cout<<"NO"<<endl;
+                col = true;
+                break;
+            }
+            else if(result <N){
+                y++;
+            }
+            else{
+                x--;
             }
         }
-    }
+
+        if(col){
+            cout<<"YES"<<endl;
+        }
+        else{
+            cout<<"NO"<<endl;
+        }
  
     }
     

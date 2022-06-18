@@ -1,20 +1,25 @@
-#include <iostream>
+#include <bits/stdc++.h>
  
 using namespace std;
  
 int main() {
  
-    int N[1000],count = 0;
-    int T;
-    cin>>T;
+    int t=0;
+    float n,arr[3];
     
-    for(int i=0;i<1000;i++){
-        for(int j=0;j<T;j++){
-            cout<<"N["<<count<<"] = ";
-            cout<<j<<endl;
-            count++;
+    while(1){
+        cin>>n;
+        if(n>=0 && n<=10){
+            arr[t++]= n;
+        }else{
+            cout<<"nota invalida"<<endl;
+        }
+        if(t>1){
+            break;
         }
     }
+    float result = (arr[0]+arr[1])/2;
+    cout<<"media = "<<fixed<<setprecision(2)<<result<<endl;
  
     return 0;
 }

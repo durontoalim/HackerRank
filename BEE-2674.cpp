@@ -1,23 +1,41 @@
 #include <bits/stdc++.h>
  
 using namespace std;
+
+bool isPrime(int n)
+{
+    if(n==0||n==1)return false;
+    if(n==2) return true;
+    if(n%2==0)return false;
+    for(int i=3;i<=sqrt(n);i+=2)
+    {
+        if(n%i==0)return false;
+    }
+    return true;
+}
+bool superPrime(int n)
+{
+    while(n>=10)
+    {
+        int s=n%10;
+        n/=10;
+        if(!isPrime(s))
+            return false;
+    }
+    if(n==2||n==3||n==7||n==5)return true;
+    else return false;
+}
  
-int main() {
- 
-    int a,count = 0,t = 3,i;
-    while(t--){
-        scanf("%d", &a);
-        for(i=2;i<a;i++){
-            if(a%i==0){
-                count++;
-            }
-        }
-        if(count==0){
-            printf("Super");
-        }else if(count == 1){
-            
+int main()
+{
+    int n;
+    while(cin>>n)
+    {
+        if(!isPrime(n))cout<<"Nada\n";
+        else
+        {
+            if(superPrime(n))cout<<"Super\n";
+            else cout<<"Primo\n";
         }
     }
- 
-    return 0;
 }
